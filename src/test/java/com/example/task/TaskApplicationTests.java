@@ -90,7 +90,6 @@ class TaskApplicationTests {
         ResponseEntity<Task> updateResponse = restTemplate.exchange(
                 baseUrl + "/" + createdTask.getId(), HttpMethod.PUT, entity, Task.class);
 
-        // Validate the update
         assertThat(updateResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
         Task updatedTask = updateResponse.getBody();
         assertThat(updatedTask.getTitle()).isEqualTo("Updated Task");
