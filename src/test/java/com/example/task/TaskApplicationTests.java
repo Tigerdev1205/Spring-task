@@ -82,7 +82,6 @@ class TaskApplicationTests {
         ResponseEntity<Task> postResponse = restTemplate.postForEntity(baseUrl, task, Task.class);
         Task createdTask = postResponse.getBody();
 
-        // Update the task
         createdTask.setTitle("Updated Task");
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<Task> entity = new HttpEntity<>(createdTask, headers);
