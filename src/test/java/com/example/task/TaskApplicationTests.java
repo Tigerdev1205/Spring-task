@@ -67,7 +67,6 @@ class TaskApplicationTests {
         // Get the created task by ID
         ResponseEntity<Task> getResponse = restTemplate.getForEntity(baseUrl + "/" + createdTask.getId(), Task.class);
 
-        // Validate the response
         assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
         Task retrievedTask = getResponse.getBody();
         assertThat(retrievedTask).isNotNull();
