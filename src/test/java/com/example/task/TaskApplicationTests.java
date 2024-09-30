@@ -75,7 +75,6 @@ class TaskApplicationTests {
 
     @Test
     void updateTask() {
-        // Create a new task first
         Task task = new Task(null, "Update Task", "Testing Task Update", false, new Date(), new Date());
         ResponseEntity<Task> postResponse = restTemplate.postForEntity(baseUrl, task, Task.class);
         Task createdTask = postResponse.getBody();
